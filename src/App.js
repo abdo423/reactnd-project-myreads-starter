@@ -17,11 +17,14 @@ const BooksApp = () => {
   const [input, setInput] = useState("");
    const[error, setError] = useState('');
 
+  
+   
   useEffect(()=>{
   
     BooksAPI.getAll().then(books=>{
-  
+ 
   setBooks(books)
+
 
 
     }).catch(error => {
@@ -51,7 +54,7 @@ if(checking){
   
   })
   setSearchedBooks(data)
-  setBooks(data)
+setBooks([...data,...books])
 
 }
 
